@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import stopIcon from "./assets/icons/two-vertical-rect.png";
+import diceIcon from "./assets/icons/dice.png";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// API: https://api.adviceslip.com
+
+export default function App() {
+  let [adviceInfo, setAdviceInfo] = useState();
+
+  useEffect(() => {
+    getAdvice().then((advice) => setAdviceInfo(advice));
+  }, []);
+
+  if (adviceInfo) {
+    return (
+      <>
+        <h1>ADVICE #{adviceInfo.slip.id}</h1>
+        <p className="advice-text">“{adviceInfo.slip.advice}”</p>
+        <div className="separator">
+          <span className="separator__line"></span>
+          <img src={stopIcon} alt="" />
+        </div>
+        <div className="dice">
+          <button
+            onClick={() => {
+              getAdvice().then((advice) => setAdviceInfo(advice));
+            }}
+          >
+            <img src={diceIcon} alt="" />
+          </button>
+        </div>
+      </>
+    );
+  }
 }
 
-export default App;
+async function getAdvice() {
+  let adviceInfo = await fetch("https://api.adviceslip.com/advice");
+  return await adviceInfo.json();
+}

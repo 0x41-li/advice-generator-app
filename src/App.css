@@ -1,38 +1,110 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  font-family: "Manrope", Arial, Helvetica, sans-serif;
+  background-color: #202733;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 100vh;
 }
 
-.App-link {
-  color: #61dafb;
+#app {
+  background-color: #313a48;
+  box-shadow: 30px 50px 80px rgba(0, 0, 0, 0.100202);
+  border-radius: 10px;
+  max-width: 343px;
+  text-align: center;
+
+  padding: 0px 24px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+h1 {
+  margin-top: 40px;
+
+  font-family: "Manrope";
+  font-weight: 800;
+  font-size: 11px;
+  line-height: 15px;
+
+  letter-spacing: 3.45714px;
+
+  color: #53ffaa;
+}
+
+.advice-text {
+  font-family: "Manrope";
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 33px;
+  letter-spacing: -0.257143px;
+
+  color: #cee3e9;
+
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.separator {
+  position: relative;
+  margin-bottom: 32px;
+}
+
+.separator__line {
+  height: 1px;
+  background: #4f5d74;
+  display: block;
+}
+
+.separator img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #313a48;
+  padding: 0px 15px;
+}
+
+.dice button {
+  position: relative;
+  top: 32px;
+  background: #53ffaa;
+  border-radius: 50%;
+  height: 64px;
+  width: 64px;
+
+  border: none;
+
+  cursor: pointer;
+
+  transition: all 0.6s;
+}
+
+.dice button:hover {
+  background: #53ffaa;
+  box-shadow: 0px 0px 40px #53ffaa;
+}
+
+@media screen and (min-width: 768px) {
+  #app {
+    max-width: 540px;
+    padding: 0px 48px;
   }
-  to {
-    transform: rotate(360deg);
+
+  h1 {
+    margin-top: 48px;
+    font-size: 13px;
+    line-height: 17px;
+    letter-spacing: 4px;
+  }
+
+  .advice-text {
+    font-size: 28px;
+    line-height: 38px;
+    letter-spacing: -0.3px;
   }
 }
