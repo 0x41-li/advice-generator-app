@@ -25,7 +25,6 @@ export default function App() {
             onClick={() => {
               getAdvice().then((advice) => {
                 setAdviceInfo(advice);
-                console.log(advice)
               });
             }}
           >
