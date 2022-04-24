@@ -1,5 +1,6 @@
 {
   "name": "advice-generator-app",
+  "homepage": "https://0x41-li.github.io/advice-generator-app/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

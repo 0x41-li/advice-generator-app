@@ -23,7 +23,10 @@ export default function App() {
         <div className="dice">
           <button
             onClick={() => {
-              getAdvice().then((advice) => setAdviceInfo(advice));
+              getAdvice().then((advice) => {
+                setAdviceInfo(advice);
+                console.log(advice)
+              });
             }}
           >
             <img src={diceIcon} alt="" />
