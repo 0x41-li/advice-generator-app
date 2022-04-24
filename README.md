@@ -32,7 +32,7 @@ Your users should be able to:
 
 ### Links
 
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [https://0x41-li.github.io/advice-generator-app/](https://0x41-li.github.io/advice-generator-app/)
 
 ## My process
 
